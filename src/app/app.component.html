@@ -1,0 +1,10 @@
+<app-counter [counter]="initialCounterValue"
+             (counterValueChanged)="counterValueChanged($event)"
+></app-counter>
+
+<!-- 1) из компоненты родителя в дочерний компонент (сверху-вниз) -->
+<!-- 2) из дочерней компоненты в компонент родителя (снизу-вверх) -->
+
+<p *ngIf="currentCounterValue > 5">Значение превысило 5</p>
+
+<app-todo></app-todo>

@@ -1,0 +1,14 @@
+<h2>{{ title }}</h2>
+
+<ul class="app-todo__list">
+  <li *ngFor="let item of todoList; let i = index"
+      class="app-todo__list-item"
+  >
+    {{ (i + 1) + '. ' + item.title }}
+  </li>
+</ul>
+
+<input #inputEl type="text" class="app-todo__input">
+<button class="app-todo__button"
+        (click)="onButtonClick()"
+>Add</button>
