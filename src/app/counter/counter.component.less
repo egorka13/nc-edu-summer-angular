@@ -1,14 +1,39 @@
+@light-gray: #eee;
+@dark-gray: #222;
+
 .app-counter {
   &__number {
+    display: inline-block;
+    width: 50px;
     padding: 20px;
     font-size: 24px;
   }
 
   &__plus {
+    width: 100px;
+    padding: 20px;
     font-size: 24px;
+    background-color: transparent;
+    border: 4px solid @dark-gray;
+    color: @dark-gray;
+
+    &:hover {
+      background-color: @light-gray;
+      color: @dark-gray;
+    }
   }
 
   &__minus {
+    width: 100px;
+    padding: 20px;
     font-size: 24px;
+    background-color: transparent;
+    border: 4px solid @dark-gray;
+    color: @dark-gray;
+
+    &:hover {
+      background-color: @light-gray;
+      color: @dark-gray;
+    }
   }
 }

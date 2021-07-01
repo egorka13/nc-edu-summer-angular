@@ -1,8 +1,41 @@
+@light-gray: #eee;
+@dark-gray: #222;
+
 .app-todo {
   &__list {
+    margin-bottom: 30px;
+
     &-item {
       list-style: none;
       padding-left: 20px;
     }
+  }
+
+  &__input {
+    width: 200px;
+    padding: 10px;
+    font-size: 24px;
+    outline: none;
+    border: 4px solid @dark-gray;
+    color: @dark-gray;
+  }
+
+  &__button {
+    width: 100px;
+    padding: 10px;
+    font-size: 24px;
+    outline: none;
+    background-color: transparent;
+    border: 4px solid @dark-gray;
+    color: @dark-gray;
+
+    &:hover {
+      background-color: @light-gray;
+      color: @dark-gray;
+    }
+  }
+
+  &__text {
+    margin-top: 30px;
   }
 }

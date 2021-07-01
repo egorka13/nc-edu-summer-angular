@@ -6,9 +6,9 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
- initialCounterValue: number = 0;
+  initialCounterValue: number = 0;
 
- currentCounterValue: number = 0;
+  currentCounterValue: number = 0;
 
   counterValueChanged(event: number): void {
     this.currentCounterValue = event;
