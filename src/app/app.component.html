@@ -1,3 +1,11 @@
+<nav>
+  <a class="app-root__nav-link" routerLink="/">Home</a>
+  <a class="app-root__nav-link" routerLink="/about">About</a>
+  <a class="app-root__nav-link" routerLink="/dksfjsdfkj">Not found</a>
+</nav>
+
+<router-outlet></router-outlet>
+
 <app-counter [counter]="initialCounterValue"
              (counterValueChanged)="counterValueChanged($event)"
 ></app-counter>
@@ -7,4 +15,6 @@
 
 <p *ngIf="currentCounterValue > 5" bold>Значение превысило 5</p>
 
-<app-todo></app-todo>
+<app-todo *ngIf="isAlive" [date]="currentDate">
+  <h2 #todoTitle>Todo Component</h2>
+</app-todo>

@@ -3,7 +3,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
-  styleUrls: ['./counter.component.less']
+  styleUrls: ['./counter.component.less'],
 })
 export class CounterComponent {
 
@@ -12,6 +12,9 @@ export class CounterComponent {
 
   @Output()
   counterValueChanged: EventEmitter<number> = new EventEmitter<number>();
+
+  constructor() {
+  }
 
   onIncrement(): void {
     ++this.counter;

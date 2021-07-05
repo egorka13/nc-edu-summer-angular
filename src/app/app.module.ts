@@ -7,13 +7,19 @@ import {CounterComponent} from './counter/counter.component';
 import {TodoComponent} from './todo/todo.component';
 import {FormsModule} from '@angular/forms';
 import {BoldDirective} from './bold.directive';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CounterComponent,
     TodoComponent,
-    BoldDirective
+    BoldDirective,
+    HomeComponent,
+    AboutComponent,
+    NotFoundComponent
   ],
   imports: [
     FormsModule,

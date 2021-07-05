@@ -1,3 +1,5 @@
+@import "../mixins.less";
+
 @light-gray: #eee;
 @dark-gray: #222;
 
@@ -7,6 +9,11 @@
     width: 50px;
     padding: 20px;
     font-size: 24px;
+
+    &._isRed {
+      //color: red;
+      .color-red();
+    }
   }
 
   &__plus {

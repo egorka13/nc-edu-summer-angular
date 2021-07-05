@@ -1,6 +1,14 @@
 <h2>Counter Component</h2>
 
-<div class="app-counter__number">{{ counter }}</div>
+<div class="app-counter__number" [ngClass]="{ '_isRed': counter > 5 }">{{ counter }}</div>
 
 <button class="app-counter__plus" (click)="onIncrement()">+</button>
 <button class="app-counter__minus" (click)="onDecrement()">-</button>
+
+<ng-container *ngIf="counter > 5; else ifCounterLessThanfive">
+  <p>Значение счетчика больше 5</p>
+</ng-container>
+
+<ng-template #ifCounterLessThanfive>
+  <p>Значение счетчика меньше 5</p>
+</ng-template>
