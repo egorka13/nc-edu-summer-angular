@@ -1,11 +1,12 @@
 <h2>{{ title }}</h2>
+<p>{{ todoService.currentDate$ | async }}</p>
 
 <ng-content></ng-content>
 
 <ul class="app-todo__list">
   <li bold
       class="app-todo__list-item"
-      *ngFor="let item of todoService.todoList; let i = index"
+      *ngFor="let item of todoList; let i = index"
       (click)="onItemClick(item, i)"
   >
     {{ (i + 1) + '. ' + item.title }}

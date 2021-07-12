@@ -10,6 +10,7 @@ import {
   ViewChild
 } from '@angular/core';
 import {ITodoList, TodoService} from '../todo.service';
+import {filter} from 'rxjs/operators';
 
 @Component({
   selector: 'app-todo',
@@ -36,12 +37,33 @@ export class TodoComponent implements OnInit, AfterViewInit, OnChanges {
   title: string = 'Todo list';
   isEditMode: boolean = false;
 
+  todoList: ITodoList[] = [];
+
   constructor(public todoService: TodoService) {
     console.log('constructor')
   }
 
   ngOnInit(): void {
     console.log('ngOnInit')
+    this.todoService.currentDate$.subscribe((value: Date) => console.log(value));
+
+    this.todoService.getTodoList()
+      .pipe(
+        filter(value => !!value)
+      )
+      .subscribe((todoList: ITodoList[]) => {
+        this.todoList = [...todoList];
+      });
+
+    this.todoService.getTodoItem(1)
+      .pipe(
+        filter(value => !!value)
+      )
+      .subscribe((todoItem: ITodoList) => {
+        console.log(todoItem);
+      });
+
+    this.todoService.updateTodoItem().subscribe();
   }
 
   ngAfterViewInit(): void {
@@ -50,7 +72,7 @@ export class TodoComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('ngOnChanges', changes)
+    // console.log('ngOnChanges', changes)
   }
 
   ngOnDestroy(): void {
@@ -65,7 +87,7 @@ export class TodoComponent implements OnInit, AfterViewInit, OnChanges {
         this.isEditMode = false;
         this.inputValue = '';
       } else {
-        this.todoService.addItem({title: this.inputElement.nativeElement.value, isDone: false, isSelected: false});
+        this.todoService.addItem({title: this.inputElement.nativeElement.value, completed: false, isSelected: false});
         this.inputValue = '';
         this.isEditMode = false;
       }

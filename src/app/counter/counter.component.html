@@ -1,6 +1,6 @@
 <h2>Counter Component</h2>
 
-<div class="app-counter__number" [ngClass]="{ '_isRed': counter > 5 }">{{ counter }}</div>
+<div [class]="buttonClass" [ngClass]="{ '_isRed': counter > 5 }">{{ counter }}</div>
 
 <button class="app-counter__plus" (click)="onIncrement()">+</button>
 <button class="app-counter__minus" (click)="onDecrement()">-</button>

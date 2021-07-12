@@ -13,6 +13,14 @@ export class CounterComponent {
   @Output()
   counterValueChanged: EventEmitter<number> = new EventEmitter<number>();
 
+  get buttonClass(): string {
+    if (this.counter > 5) {
+      return 'app-counter__number' + ' test' + ' test2' + ' test3';
+    } else {
+      return 'app-counter__number';
+    }
+  }
+
   constructor() {
   }
 

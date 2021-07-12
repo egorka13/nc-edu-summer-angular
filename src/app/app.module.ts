@@ -10,6 +10,8 @@ import {BoldDirective} from './bold.directive';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,11 +21,13 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BoldDirective,
     HomeComponent,
     AboutComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    RxjsComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
